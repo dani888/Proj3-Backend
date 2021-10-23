@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const cardSchema = new Schema({
     userName: String,
     nickName: String,
-    employed: Boolean,
+    employed: String,
     companyName: String,
     jobTitle: String,
     hobbies: String

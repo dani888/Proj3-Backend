@@ -4,12 +4,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 // define our schema
 const cardSchema = new Schema({
-    userName: String,
+    userName: { type: String, required: true, unique: true },
     nickName: String,
-    employed: String,
+    linkedIn: String,
+    portfolio: String,
+    employed: { type: Boolean, required: true },
     companyName: String,
     jobTitle: String,
-    hobbies: String
+    hobbies: { type: String, required: true }
     },
     {timestamps: true}
 );

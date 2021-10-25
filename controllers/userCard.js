@@ -2,12 +2,6 @@ const express = require("express")
 const cardRouter = express.Router()
 const cards = require('../models/userCards');
 
-// INDEX ROUTE
-cardRouter.get('/', (req, res) => {
-    cards.find({}, (err, card) => {
-        res.json(card)
-    });
-});
 cardRouter.post('/', async (req, res) => {
     try {
         await cards.create(req.body);

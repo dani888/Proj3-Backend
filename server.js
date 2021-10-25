@@ -32,6 +32,9 @@ app.use(express.json());
 const cardController = require("./controllers/userCard")
 app.use("/api/card", cardController);
 
+const displayController = require("./controllers/displayCard")
+app.use("/api/table", displayController);
+
 const port = process.env.PORT || 3001;
 
 app.listen(port, () => {

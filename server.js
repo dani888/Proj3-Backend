@@ -35,7 +35,7 @@ admin.initializeApp({
       "type": "service_account",
       "project_id": "react-crm-4633a",
       "private_key_id": PRIVATE_KEY_ID,
-      "private_key": PRIVATE_KEY,   // .replace(/\\n/g, '\n'),
+      "private_key": PRIVATE_KEY.replace(/\\n/g, '\n'),
       "client_email": "firebase-adminsdk-gqp6r@react-crm-4633a.iam.gserviceaccount.com",
       "client_id": CLIENT_ID,
       "auth_uri": "https://accounts.google.com/o/oauth2/auth",

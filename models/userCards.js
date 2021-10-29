@@ -11,7 +11,8 @@ const cardSchema = new Schema({
     employed: { type: Boolean, required: true },
     companyName: String,
     jobTitle: String,
-    hobbies: { type: String, required: true }
+    hobbies: { type: String, required: true },
+    managedBy: String 
     },
     {timestamps: true}
 );

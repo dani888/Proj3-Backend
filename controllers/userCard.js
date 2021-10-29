@@ -3,6 +3,7 @@ const cardRouter = express.Router()
 const cards = require('../models/userCards');
 
 cardRouter.post('/', async (req, res) => {
+    console.log(req.body)
     try {
         await cards.create(req.body);
         res.json({success: true});

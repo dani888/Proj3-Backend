@@ -2,8 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const methodOverride = require("method-override")
-const bodyParser = require('body-parser');
-
+// const bodyParser = require('body-parser');
+const serviceAccount = require('./react-crm-4633a-firebase-adminsdk-gqp6r-ee4c615249.json');
+const admin = require('firebase-admin');
 
 const app = express();
 app.use(cors())
@@ -27,6 +28,27 @@ db.on('error', () => console.log(`Uh Oh! Mongodb had and error ${error.message}`
 // app.use(express.urlencoded());
 // app.use(bodyParser.json());
 app.use(express.json());
+
+////
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+  });
+  
+  app.use(async function(req, res, next) {
+    //   console.log(req)
+      const token = req.get('Authorization')
+      console.log('this is token', token)
+      const authUser = await admin.auth().verifyIdToken(token.replace('Bearer ', ''))
+      req.user = authUser
+      next();
+  });
+  
+  // router auth middleware function
+  function isAuthenticated(req, res, next) {
+      if(req.user) return next();
+      else res.status(401).json({message: 'unauthorized'});
+  }
+////
 
 
 const cardController = require("./controllers/userCard")

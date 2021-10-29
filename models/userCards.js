@@ -8,7 +8,7 @@ const cardSchema = new Schema({
     nickName: String,
     linkedIn: String,
     portfolio: String,
-    employed: { type: Boolean, required: true },
+    // employed: { type: Boolean, required: true },
     companyName: String,
     jobTitle: String,
     hobbies: { type: String, required: true },

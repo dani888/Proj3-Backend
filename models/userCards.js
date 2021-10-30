@@ -6,12 +6,13 @@ const Schema = mongoose.Schema;
 const cardSchema = new Schema({
     userName: { type: String, required: true, unique: true },
     nickName: String,
+    email: String,
     linkedIn: String,
     portfolio: String,
     // employed: { type: Boolean, required: true },
     companyName: String,
     jobTitle: String,
-    hobbies: { type: String, required: true },
+    hobbies: String,
     managedBy: String 
     },
     {timestamps: true}

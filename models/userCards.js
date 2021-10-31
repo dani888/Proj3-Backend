@@ -9,6 +9,7 @@ const cardSchema = new Schema({
     email: String,
     linkedIn: String,
     portfolio: String,
+    location: String,
     // employed: { type: Boolean, required: true },
     companyName: String,
     jobTitle: String,

@@ -7,7 +7,7 @@ const cardSchema = new Schema({
     userName: { type: String, required: true, unique: true },
     nickName: String,
     email: String,
-    linkedIn: String,
+    linkedIn: URL,
     portfolio: String,
     location: String,
     // employed: { type: Boolean, required: true },

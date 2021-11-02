@@ -49,7 +49,7 @@ admin.initializeApp({
     //   console.log(req)
       const token = req.get('Authorization')
       console.log('this is token', token)
-      const authUser = await admin.auth().verifyIdToken(token.replace('Bearer ', ''))
+      const authUser = await admin.auth().verifyIdToken(token?.replace('Bearer ', ''))
       req.user = authUser
       next();
   });
